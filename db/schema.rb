@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151105122830) do
+ActiveRecord::Schema.define(version: 20151105153738) do
 
   create_table "profiles", force: :cascade do |t|
     t.string   "gender"
@@ -37,6 +37,9 @@ ActiveRecord::Schema.define(version: 20151105122830) do
     t.string   "password_digest"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
+    t.integer  "users_id"
   end
+
+  add_index "users", ["users_id"], name: "index_users_on_users_id"
 
 end
